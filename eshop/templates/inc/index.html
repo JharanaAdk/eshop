@@ -1,0 +1,18 @@
+{% extends 'inc/nav.html' %}
+{% block content %}
+
+{% for item in trending_product %}
+<div class="card" style="width: 18rem;">
+    <img src="{{item.product_image.url}}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{item.name}}</h5>
+      <p class="card-text">{{item.small_description}}</p>
+      <a href="#" class="btn btn-primary">Add to Cart</a>
+    </div>
+  </div>
+{% endfor %}
+
+
+
+
+{% endblock content %}

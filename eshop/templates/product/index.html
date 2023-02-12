@@ -1,0 +1,35 @@
+{% extends 'inc/nav.html' %}
+{% block content %}
+
+<div class="py-3 " style="background-color: #280335;">
+  <div class="container">
+      <a class="text-white" href="{% url 'home' %}"> Home /</a>
+      <a class="text-white" href="{% url 'category' %}"> Category</a>
+      
+  </div>
+</div>   
+<hr>
+<div class="container">   
+  <div class="row">  
+      <div class="col-md-12"> 
+          <div class="row">   
+              {% for item in category %}
+              <div class="mx-2 col-3">  
+                <div class="card" style="width: 18rem;">
+                 <a href="{% url 'categoryproduct' item.slug %}">
+                    <img src="{{item.image.url}}" class="card-img-top" alt="...">
+                    <div class="card-body text-decoration-none">
+                      <h5 class="card-title text-decoration-none">{{item.name}}</h5>
+                      {% comment %} <p class="card-text">{{item.description}}</p> {% endcomment %}
+                    </div>
+                  </a> 
+                </div> 
+              </div>
+              {% endfor %}
+          </div>
+      </div>
+  </div>
+</div>
+
+
+{% endblock content %}
