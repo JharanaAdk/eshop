@@ -22,7 +22,9 @@ urlpatterns = [
     path('delete-cart-item', cart.deletecartitem, name="deletecartitem"),
 
     #wishlist function url
-    path('wishlist', wishlist.index, name="wishlist")
+    path('wishlist', wishlist.index, name="wishlist"),
+    path('add-to-wishlist', wishlist.addtowishlist, name="addtowishlist"),
+    path('delete-wishlist-item', wishlist.deletewishlistitem, name="addtowishlist"),
 
 ]
 if settings.DEBUG:
