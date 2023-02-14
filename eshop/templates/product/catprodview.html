@@ -7,6 +7,7 @@
     <div class="container">
         <a class="text-white" href="{% url 'home' %}"> Home /</a>
         <a class="text-white" href="{% url 'category' %}"> Category / </a>
+        <a class="text-white" href="{% url 'categoryproduct' category.slug %}"> {{category.name}}</a>
     </div>
 </div>    
     

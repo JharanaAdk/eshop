@@ -9,33 +9,37 @@
           <div class="row">   
               {% for item in trending_product %}
               <div class="mx-2 col-3">  
-                <a href="{% url 'productview' item.category.slug item.slug %}">
+                <a class="text-decoration-none"  href="{% url 'productview' item.category.slug item.slug %}">
                 <div class="card" >
                     <img src="{{item.product_image.url}}" class="card-img-top" alt="...">
                     <div class="card-body text-decoration-none">
                       <h5 class="text-decoration-none card-title text-center">{{item.name}}</h5>
-                      <span class="float-start text-danger" > Rs: <s>{{ item.original_price| stringformat:'d' }}</s></span>
-                      <span class="float-end">Rs: {{ item.selling_price | stringformat:'d' }}</span><br>
-                      <div class="row ">
-                        <div class="col-md-2 mx-5 float-center">
-                             {% csrf_token %}
-                            <input type="hidden" value="{{ product.id }}" class="prod_id">
-                            <label class="text-center" for="Quantity">Quantity</label>
-                             <div class ="input-group text-center " style="width:130px;">
+                      <span class="float-start mt-2" ><s>{{ item.original_price }}</s></span>
+                      <span class="float-end mt-2" >{{ item.selling_price }}</span>
+                      <br>
+                      <div class="row mt-2">
+                        <div class="col-md-6">
+                            {% csrf_token %}
+                            <input type="hidden" value="{{ item.id }}" class="prod_id">
+                            <div class ="input-group text-center mt-2 mb-2">
                                 <button class="input-group-text decrement-btn">-</button>
                                 <input type="text" name="quantity" class="form-control qty-input text-center" value="1">
                                 <button class="input-group-text increment-btn">+</button>
                             </div>
                         </div>
-                      </div><br>
-                      {% if product.quantity > 0 %}
-                      <button type="button" class="btn btn-primary me-3 w-100 addToCartBtn">Add to Cart <span class="bi bi-cart-fill"></span></button>
-                      {% endif %}
-                      <button type="button" class="btn btn-danger me-3  w-100 float-start">Add to Wishlist <span class="bi bi-heart-fill"></span></i></button>
+                        <div class="col-md-6 px-0">
+                            <span class="float-end mt-2 mb-2"> 
+                                {% if item.quantity > 0 %}
+                                     <button type="button" class="btn btn-primary btn-sm me-3 py-2 addToCartBtn"> Add to Cart <i class="bi bi-cart-fill"></i></button>
+                                {% else %}
+                                     <button type="button" class="btn btn-danger btn-sm me-3 py-2 disabled "> Out of Stock </button>
+                                {% endif %}
+                           </span> 
+                        </div>
+                      </div>
                     </div>
-                  
-                </div> 
-              </a>
+                </div>
+                </a>
               </div>
               {% endfor %}
           </div>

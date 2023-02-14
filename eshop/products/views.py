@@ -16,7 +16,7 @@ def catview(request):
 def categoryproduct(request, slug):
     if(Category.objects.filter(slug=slug, status=0)):
        product= Product.objects.filter(category__slug= slug) 
-       category = Category.objects.filter(slug=slug)
+       category = Category.objects.filter(slug=slug).first()
        context = {'product': product, 'category': category}
        return render(request, 'product/catprodview.html', context)
     else:
