@@ -18,7 +18,7 @@ def addtocart(request):
                         Cart.objects.create(user=request.user, product_id=prod_id, product_qty=prod_qty)
                         return JsonResponse({'status':"Your seleted prodcut added sucesfully"})
                     else:
-                        return JsonResponse({'status':"only"+ str(product_check.quantity)+"quantity available"})
+                        return JsonResponse({'status':"there are oly"+ str(product_check.quantity)+"quantity available please change the quantity"})
             else:
                 return JsonResponse({'status':"No such Product found"})
         else:
