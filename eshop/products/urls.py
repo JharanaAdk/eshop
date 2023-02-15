@@ -1,8 +1,10 @@
 from django.urls import path
 from . import views
+
+from products.controller import cart, wishlist
+
 from django.conf import settings
 from django.conf.urls.static import static
-from products.controller import cart, wishlist
 
 urlpatterns = [
     path('', views.home, name="home"),
@@ -20,6 +22,7 @@ urlpatterns = [
     path('cart', cart.viewcart, name="cart"),
     path('update-cart', cart.updatecart, name="updatecart"),
     path('delete-cart-item', cart.deletecartitem, name="deletecartitem"),
+
 
     #wishlist function url
     path('wishlist', wishlist.index, name="wishlist"),

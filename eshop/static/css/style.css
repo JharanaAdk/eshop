@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+.nav-link {
+    color: #280335;
+}
+
+html {
+    font-family: sans-serif;
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+    background-color: #f5d8ff !important;
+}
+
+article,
+aside,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section {
+    display: block;
+}
+
+body {
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #280335;
+    text-align: left;
+}
+
+
+/* nav item css */
+
+.search-bar {
+    width: 40% !important;
+    margin-left: 10%;
+}
+
+.navbar-brand {
+    font-size: 30px;
+    font-weight: 800 !important;
+}
+
+a {
+    text-decoration: none;
+    color: #280335 !important;
+}
+
+.active {
+    font-weight: 800;
+}
+
+.nav-item {
+    font-size: 18px;
+}
+
+
+/* breadcrumbs style */
+
+.bread {
+    background-color: #280335;
+}
+
+.trending_trek_card {
+    background-color: #280335;
+}
+
+
+/* view.html css */
+
+.product-viewtag {
+    background-color: rgb(182, 40, 40);
+    color: #fff;
+    font-size: 11px;
+    line-height: 1;
+    position: absolute;
+    text-align: center;
+    text-transform: uppercase;
+    top: 22px;
+    margin-left: 17.5rem;
+    padding: 7px 10px;
+    font-weight: 600;
+    min-width: 45px;
+}
+
+
+/* checkout.html css  */
+
+.checkoutform label {
+    font-size: 14px !important;
+    font-weight: 600;
+}
+
+.checkoutform input {
+    font-size: 14px !important;
+}
