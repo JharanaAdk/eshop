@@ -1,7 +1,7 @@
 from django.urls import path
 from . import views
 
-from products.controller import cart, wishlist
+from products.controller import cart, wishlist , checkout
 
 from django.conf import settings
 from django.conf.urls.static import static
@@ -28,6 +28,11 @@ urlpatterns = [
     path('wishlist', wishlist.index, name="wishlist"),
     path('add-to-wishlist', wishlist.addtowishlist, name="addtowishlist"),
     path('delete-wishlist-item', wishlist.deletewishlistitem, name="addtowishlist"),
+
+    #checkou function url from the checkout controller
+    path('checkout', checkout.index, name="checkout"),
+    path('place-order', checkout.placeorder, name="placeorder")
+    
 
 ]
 if settings.DEBUG:
